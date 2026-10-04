@@ -1,0 +1,1548 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MHD WEAR | T-Shirts</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f5f5f5;
+    color:#111;
+}
+
+/* ================= HEADER ================= */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:white;
+    border-bottom:1px solid #ddd;
+}
+
+.navbar{
+    max-width:1200px;
+    margin:auto;
+    height:75px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 20px;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:900;
+    letter-spacing:2px;
+}
+
+nav{
+    display:flex;
+    gap:30px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#111;
+    font-weight:bold;
+}
+
+nav a:hover{
+    opacity:.5;
+}
+
+.cart{
+    font-size:24px;
+    cursor:pointer;
+    position:relative;
+}
+
+.cart-count{
+    position:absolute;
+    top:-10px;
+    right:-12px;
+    background:#111;
+    color:white;
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    font-size:12px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+
+    min-height:600px;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.55),
+        rgba(0,0,0,.55)
+    ),
+    url("images/hero.jpg");
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+    color:white;
+    padding:30px;
+}
+
+.hero h1{
+    font-size:clamp(45px,8vw,90px);
+    font-weight:900;
+    letter-spacing:5px;
+}
+
+.hero p{
+    font-size:20px;
+    margin:20px 0 30px;
+}
+
+.btn{
+    display:inline-block;
+    background:white;
+    color:#111;
+    padding:15px 30px;
+    border:none;
+    border-radius:4px;
+    text-decoration:none;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* ================= SECTION ================= */
+
+.section{
+    max-width:1200px;
+    margin:auto;
+    padding:80px 20px;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title h2{
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+.section-title p{
+    color:#666;
+}
+
+/* ================= PRODUITS ================= */
+
+.products{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:25px;
+}
+
+.product{
+
+    background:white;
+
+    border-radius:10px;
+
+    overflow:hidden;
+
+    transition:.3s;
+
+    box-shadow:
+    0 5px 20px
+    rgba(0,0,0,.06);
+}
+
+.product:hover{
+    transform:translateY(-7px);
+}
+
+.product-image{
+    height:320px;
+    overflow:hidden;
+    position:relative;
+}
+
+.product-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.4s;
+}
+
+.product:hover img{
+    transform:scale(1.05);
+}
+
+.product-info{
+    padding:20px;
+}
+
+.product-info h3{
+    font-size:21px;
+    margin-bottom:10px;
+}
+
+.price{
+    font-size:22px;
+    font-weight:bold;
+    margin-bottom:18px;
+}
+
+/* ================= COULEURS ================= */
+
+.color-title{
+    font-size:14px;
+    font-weight:bold;
+    margin-bottom:10px;
+}
+
+.colors{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:9px;
+
+    margin-bottom:20px;
+}
+
+.color{
+
+    width:28px;
+    height:28px;
+
+    border-radius:50%;
+
+    border:2px solid white;
+
+    outline:1px solid #aaa;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.color:hover{
+    transform:scale(1.15);
+}
+
+.color.selected{
+    outline:3px solid #111;
+}
+
+/* COULEURS */
+
+.black{background:#000;}
+.white{background:#fff;}
+.grey{background:#808080;}
+.light-grey{background:#d3d3d3;}
+.dark-grey{background:#404040;}
+
+.navy{background:#000080;}
+.blue{background:#0066cc;}
+.royal-blue{background:#4169e1;}
+.sky-blue{background:#87ceeb;}
+.light-blue{background:#add8e6;}
+.denim{background:#416a85;}
+
+.red{background:#e00000;}
+.dark-red{background:#8b0000;}
+.burgundy{background:#800020;}
+.maroon{background:#800000;}
+.coral{background:#ff7f50;}
+
+.orange{background:#ff6600;}
+.light-orange{background:#ffb347;}
+
+.yellow{background:#ffd900;}
+.mustard{background:#d4a017;}
+.gold{background:#d4af37;}
+
+.green{background:#008000;}
+.dark-green{background:#064e2c;}
+.forest{background:#228b22;}
+.olive{background:#808000;}
+.lime{background:#32cd32;}
+.mint{background:#98ff98;}
+.khaki{background:#bdb76b;}
+
+.turquoise{background:#40e0d0;}
+.teal{background:#008080;}
+
+.pink{background:#ff69b4;}
+.light-pink{background:#ffb6c1;}
+.hot-pink{background:#ff1493;}
+
+.purple{background:#800080;}
+.light-purple{background:#c8a2c8;}
+.dark-purple{background:#4b0082;}
+
+.brown{background:#8b4513;}
+.dark-brown{background:#4b2e1f;}
+.beige{background:#f5f5dc;}
+.cream{background:#fffdd0;}
+.sand{background:#c2b280;}
+
+/* ================= TAILLES ================= */
+
+select{
+
+    width:100%;
+
+    padding:13px;
+
+    border:1px solid #ccc;
+
+    background:white;
+
+    margin-bottom:12px;
+
+    cursor:pointer;
+}
+
+/* ================= QUANTITE ================= */
+
+.quantity{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    border:1px solid #ddd;
+
+    margin-bottom:15px;
+
+}
+
+.quantity button{
+
+    border:none;
+
+    background:#f2f2f2;
+
+    width:40px;
+
+    height:40px;
+
+    font-size:20px;
+
+    cursor:pointer;
+}
+
+.quantity span{
+    font-weight:bold;
+}
+
+/* ================= PANIER ================= */
+
+.add-cart{
+
+    width:100%;
+
+    padding:14px;
+
+    background:#111;
+
+    color:white;
+
+    border:none;
+
+    border-radius:4px;
+
+    cursor:pointer;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+.add-cart:hover{
+    background:#333;
+}
+
+/* ================= INFOS ================= */
+
+.features{
+
+    background:#111;
+
+    color:white;
+}
+
+.feature-grid{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:70px 20px;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:30px;
+
+    text-align:center;
+}
+
+.feature{
+    padding:20px;
+}
+
+.feature-icon{
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+.feature h3{
+    margin-bottom:10px;
+}
+
+.feature p{
+    color:#aaa;
+}
+
+/* ================= PANIER ================= */
+
+.cart-panel{
+
+    position:fixed;
+
+    top:0;
+    right:-420px;
+
+    width:400px;
+    max-width:90%;
+
+    height:100vh;
+
+    background:white;
+
+    z-index:2000;
+
+    box-shadow:
+    -5px 0 25px
+    rgba(0,0,0,.2);
+
+    padding:25px;
+
+    transition:.4s;
+
+    overflow:auto;
+}
+
+.cart-panel.active{
+    right:0;
+}
+
+.cart-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    border-bottom:1px solid #ddd;
+
+    padding-bottom:20px;
+}
+
+.close-cart{
+
+    background:none;
+
+    border:none;
+
+    font-size:30px;
+
+    cursor:pointer;
+}
+
+.cart-item{
+
+    padding:15px 0;
+
+    border-bottom:1px solid #ddd;
+}
+
+.cart-total{
+
+    margin-top:25px;
+
+    font-size:22px;
+
+    font-weight:bold;
+}
+
+.whatsapp{
+
+    display:block;
+
+    margin-top:20px;
+
+    padding:15px;
+
+    text-align:center;
+
+    background:#25D366;
+
+    color:white;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    border-radius:5px;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+
+    background:#050505;
+
+    color:white;
+
+    padding:50px 20px;
+}
+
+.footer-content{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:30px;
+}
+
+footer h3{
+    margin-bottom:15px;
+}
+
+footer p{
+    color:#aaa;
+    line-height:2;
+}
+
+.copyright{
+
+    text-align:center;
+
+    margin-top:40px;
+
+    padding-top:20px;
+
+    border-top:1px solid #333;
+
+    color:#777;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:900px){
+
+    .products{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    nav{
+        display:none;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .products{
+        grid-template-columns:1fr;
+    }
+
+    .feature-grid{
+        grid-template-columns:1fr;
+    }
+
+    .footer-content{
+        grid-template-columns:1fr;
+    }
+
+    .hero{
+        min-height:500px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<header>
+
+<div class="navbar">
+
+<div class="logo">
+MHD WEAR
+</div>
+
+<nav>
+
+<a href="#accueil">
+Accueil
+</a>
+
+<a href="#boutique">
+T-Shirts
+</a>
+
+<a href="#apropos">
+À propos
+</a>
+
+<a href="#contact">
+Contact
+</a>
+
+</nav>
+
+<div class="cart"
+onclick="openCart()">
+
+🛒
+
+<span
+class="cart-count"
+id="cart-count">
+
+0
+
+</span>
+
+</div>
+
+</div>
+
+</header>
+
+
+<!-- ================= ACCUEIL ================= -->
+
+<section
+class="hero"
+id="accueil">
+
+<div>
+
+<h1>
+MHD WEAR
+</h1>
+
+<p>
+Des T-shirts pour tous les styles
+</p>
+
+<a
+href="#boutique"
+class="btn">
+
+VOIR LES T-SHIRTS
+
+</a>
+
+</div>
+
+</section>
+
+
+<!-- ================= BOUTIQUE ================= -->
+
+<section
+class="section"
+id="boutique">
+
+<div class="section-title">
+
+<h2>
+NOS T-SHIRTS
+</h2>
+
+<p>
+Choisis ta couleur et ta taille
+</p>
+
+</div>
+
+
+<div class="products">
+
+
+<!-- ================= T-SHIRT 1 ================= -->
+
+<div class="product">
+
+<div class="product-image">
+
+<img
+src="images/tshirt1.jpg"
+alt="T-shirt">
+
+</div>
+
+
+<div class="product-info">
+
+<h3>
+T-Shirt
+</h3>
+
+<div class="price">
+2 500 FCFA
+</div>
+
+
+<div class="color-title">
+Choisir une couleur
+</div>
+
+
+<div class="colors">
+
+<span
+class="color black"
+title="Noir"
+onclick="selectColor(this,'Noir')">
+</span>
+
+<span
+class="color white"
+title="Blanc"
+onclick="selectColor(this,'Blanc')">
+</span>
+
+<span
+class="color grey"
+title="Gris"
+onclick="selectColor(this,'Gris')">
+</span>
+
+<span
+class="color light-grey"
+title="Gris clair"
+onclick="selectColor(this,'Gris clair')">
+</span>
+
+<span
+class="color dark-grey"
+title="Gris foncé"
+onclick="selectColor(this,'Gris foncé')">
+</span>
+
+<span
+class="color navy"
+title="Bleu marine"
+onclick="selectColor(this,'Bleu marine')">
+</span>
+
+<span
+class="color blue"
+title="Bleu"
+onclick="selectColor(this,'Bleu')">
+</span>
+
+<span
+class="color royal-blue"
+title="Bleu royal"
+onclick="selectColor(this,'Bleu royal')">
+</span>
+
+<span
+class="color sky-blue"
+title="Bleu ciel"
+onclick="selectColor(this,'Bleu ciel')">
+</span>
+
+<span
+class="color light-blue"
+title="Bleu clair"
+onclick="selectColor(this,'Bleu clair')">
+</span>
+
+<span
+class="color denim"
+title="Bleu denim"
+onclick="selectColor(this,'Bleu denim')">
+</span>
+
+<span
+class="color red"
+title="Rouge"
+onclick="selectColor(this,'Rouge')">
+</span>
+
+<span
+class="color dark-red"
+title="Rouge foncé"
+onclick="selectColor(this,'Rouge foncé')">
+</span>
+
+<span
+class="color burgundy"
+title="Bordeaux"
+onclick="selectColor(this,'Bordeaux')">
+</span>
+
+<span
+class="color maroon"
+title="Marron rouge"
+onclick="selectColor(this,'Marron rouge')">
+</span>
+
+<span
+class="color coral"
+title="Corail"
+onclick="selectColor(this,'Corail')">
+</span>
+
+<span
+class="color orange"
+title="Orange"
+onclick="selectColor(this,'Orange')">
+</span>
+
+<span
+class="color light-orange"
+title="Orange clair"
+onclick="selectColor(this,'Orange clair')">
+</span>
+
+<span
+class="color yellow"
+title="Jaune"
+onclick="selectColor(this,'Jaune')">
+</span>
+
+<span
+class="color mustard"
+title="Moutarde"
+onclick="selectColor(this,'Moutarde')">
+</span>
+
+<span
+class="color gold"
+title="Doré"
+onclick="selectColor(this,'Doré')">
+</span>
+
+<span
+class="color green"
+title="Vert"
+onclick="selectColor(this,'Vert')">
+</span>
+
+<span
+class="color dark-green"
+title="Vert foncé"
+onclick="selectColor(this,'Vert foncé')">
+</span>
+
+<span
+class="color forest"
+title="Vert forêt"
+onclick="selectColor(this,'Vert forêt')">
+</span>
+
+<span
+class="color olive"
+title="Olive"
+onclick="selectColor(this,'Olive')">
+</span>
+
+<span
+class="color lime"
+title="Vert citron"
+onclick="selectColor(this,'Vert citron')">
+</span>
+
+<span
+class="color mint"
+title="Menthe"
+onclick="selectColor(this,'Menthe')">
+</span>
+
+<span
+class="color khaki"
+title="Kaki"
+onclick="selectColor(this,'Kaki')">
+</span>
+
+<span
+class="color turquoise"
+title="Turquoise"
+onclick="selectColor(this,'Turquoise')">
+</span>
+
+<span
+class="color teal"
+title="Teal"
+onclick="selectColor(this,'Teal')">
+</span>
+
+<span
+class="color pink"
+title="Rose"
+onclick="selectColor(this,'Rose')">
+</span>
+
+<span
+class="color light-pink"
+title="Rose clair"
+onclick="selectColor(this,'Rose clair')">
+</span>
+
+<span
+class="color hot-pink"
+title="Rose vif"
+onclick="selectColor(this,'Rose vif')">
+</span>
+
+<span
+class="color purple"
+title="Violet"
+onclick="selectColor(this,'Violet')">
+</span>
+
+<span
+class="color light-purple"
+title="Violet clair"
+onclick="selectColor(this,'Violet clair')">
+</span>
+
+<span
+class="color dark-purple"
+title="Violet foncé"
+onclick="selectColor(this,'Violet foncé')">
+</span>
+
+<span
+class="color brown"
+title="Marron"
+onclick="selectColor(this,'Marron')">
+</span>
+
+<span
+class="color dark-brown"
+title="Marron foncé"
+onclick="selectColor(this,'Marron foncé')">
+</span>
+
+<span
+class="color beige"
+title="Beige"
+onclick="selectColor(this,'Beige')">
+</span>
+
+<span
+class="color cream"
+title="Crème"
+onclick="selectColor(this,'Crème')">
+</span>
+
+<span
+class="color sand"
+title="Sable"
+onclick="selectColor(this,'Sable')">
+</span>
+
+</div>
+
+
+<select id="size1">
+
+<option value="">
+Choisir une taille
+</option>
+
+<option>XS</option>
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+<option>XXL</option>
+<option>3XL</option>
+
+</select>
+
+
+<div class="quantity">
+
+<button
+onclick="changeQuantity(-1)">
+−
+</button>
+
+<span id="quantity">
+1
+</span>
+
+<button
+onclick="changeQuantity(1)">
++
+</button>
+
+</div>
+
+
+<button
+class="add-cart"
+onclick="addProduct()">
+
+AJOUTER AU PANIER
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- ================= AUTRES CARTES ================= -->
+
+<!-- ================= AVANTAGES ================= -->
+
+<section
+class="features"
+id="apropos">
+
+<div class="feature-grid">
+
+<div class="feature">
+
+<div class="feature-icon">
+👕
+</div>
+
+<h3>
+T-Shirts
+</h3>
+
+<p>
+Des T-shirts disponibles dans plusieurs couleurs.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-icon">
+🎨
+</div>
+
+<h3>
+Beaucoup de couleurs
+</h3>
+
+<p>
+Choisis la couleur qui correspond à ton style.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-icon">
+🚚
+</div>
+
+<h3>
+Livraison
+</h3>
+
+<p>
+Commande facilement et organise ta livraison.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer
+id="contact">
+
+<div class="footer-content">
+
+<div>
+
+<h3>
+MHD WEAR
+</h3>
+
+<p>
+T-Shirts à 2 500 FCFA
+</p>
+
+<p>
+Dakar, Sénégal
+</p>
+
+</div>
+
+
+<div>
+
+<h3>
+Boutique
+</h3>
+
+<p>
+T-Shirts
+</p>
+
+<p>
+Couleurs
+</p>
+
+<p>
+Tailles
+</p>
+
+</div>
+
+
+<div>
+
+<h3>
+Contact
+</h3>
+
+<p>
+WhatsApp : +221 77 847 11 57
+</p>
+
+<p>
+Instagram : @mhd_sw24
+</p>
+
+</div>
+
+</div>
+
+
+<div class="copyright">
+
+© 2026 MHD WEAR — Tous droits réservés.
+
+</div>
+
+</footer>
+
+
+<!-- ================= PANIER ================= -->
+
+<div
+class="cart-panel"
+id="cart-panel">
+
+<div class="cart-header">
+
+<h2>
+Mon panier
+</h2>
+
+<button
+class="close-cart"
+onclick="closeCart()">
+
+×
+
+</button>
+
+</div>
+
+
+<div id="cart-items">
+
+<p>
+Ton panier est vide.
+</p>
+
+</div>
+
+
+<div class="cart-total">
+
+Total :
+<span id="cart-total">
+0
+</span>
+FCFA
+
+</div>
+
+
+<a
+id="whatsapp-order"
+class="whatsapp"
+href="#"
+target="_blank">
+
+COMMANDER SUR WHATSAPP
+
+</a>
+
+</div>
+
+
+<script>
+
+/* ================= PANIER ================= */
+
+let cart = [];
+
+let selectedColor = "";
+
+let quantity = 1;
+
+
+/* ================= COULEUR ================= */
+
+function selectColor(element,color){
+
+    document
+    .querySelectorAll(".color")
+    .forEach(c =>
+        c.classList.remove("selected")
+    );
+
+    element.classList.add("selected");
+
+    selectedColor = color;
+
+}
+
+
+/* ================= QUANTITE ================= */
+
+function changeQuantity(number){
+
+    quantity += number;
+
+    if(quantity < 1){
+        quantity = 1;
+    }
+
+    if(quantity > 20){
+        quantity = 20;
+    }
+
+    document.getElementById(
+        "quantity"
+    ).innerText = quantity;
+
+}
+
+
+/* ================= AJOUTER ================= */
+
+function addProduct(){
+
+    let size =
+    document.getElementById("size1").value;
+
+
+    if(selectedColor === ""){
+
+        alert(
+        "Choisis d'abord une couleur."
+        );
+
+        return;
+
+    }
+
+
+    if(size === ""){
+
+        alert(
+        "Choisis d'abord une taille."
+        );
+
+        return;
+
+    }
+
+
+    for(let i=0;i<quantity;i++){
+
+        cart.push({
+
+            name:"T-Shirt",
+
+            color:selectedColor,
+
+            size:size,
+
+            price:2500
+
+        });
+
+    }
+
+
+    updateCart();
+
+    openCart();
+
+}
+
+
+/* ================= PRODUIT SIMPLE ================= */
+
+function addProductSimple(){
+
+    cart.push({
+
+        name:"T-Shirt",
+
+        color:"À confirmer",
+
+        size:"À confirmer",
+
+        price:2500
+
+    });
+
+    updateCart();
+
+    openCart();
+
+}
+
+
+/* ================= ACTUALISER PANIER ================= */
+
+function updateCart(){
+
+    let items =
+    document.getElementById(
+        "cart-items"
+    );
+
+    let count =
+    document.getElementById(
+        "cart-count"
+    );
+
+    let totalElement =
+    document.getElementById(
+        "cart-total"
+    );
+
+
+    count.innerText =
+    cart.length;
+
+
+    if(cart.length === 0){
+
+        items.innerHTML =
+        "<p>Ton panier est vide.</p>";
+
+        totalElement.innerText =
+        "0";
+
+        return;
+
+    }
+
+
+    let total = 0;
+
+
+    items.innerHTML = "";
+
+
+    cart.forEach((item,index)=>{
+
+        total += item.price;
+
+
+        items.innerHTML += `
+
+        <div class="cart-item">
+
+            <strong>
+            ${item.name}
+            </strong>
+
+            <br>
+
+            Couleur :
+            ${item.color}
+
+            <br>
+
+            Taille :
+            ${item.size}
+
+            <br>
+
+            Prix :
+            ${item.price.toLocaleString()}
+            FCFA
+
+            <br><br>
+
+            <button
+            onclick="removeItem(${index})">
+
+            Supprimer
+
+            </button>
+
+        </div>
+
+        `;
+
+    });
+
+
+    totalElement.innerText =
+    total.toLocaleString();
+
+
+    let message =
+
+    "Bonjour MHD WEAR 👕\n\n" +
+
+    "Je souhaite commander :\n\n" +
+
+    cart.map(item =>
+
+        "- T-Shirt" +
+
+        "\nCouleur : " +
+        item.color +
+
+        "\nTaille : " +
+        item.size +
+
+        "\nPrix : 2 500 FCFA"
+
+    ).join("\n\n") +
+
+    "\n\nTOTAL : " +
+
+    total.toLocaleString() +
+
+    " FCFA";
+
+
+    let encodedMessage =
+    encodeURIComponent(message);
+
+
+    document.getElementById(
+        "whatsapp-order"
+    ).href =
+
+    "https://wa.me/221778471157?text=" +
+    encodedMessage;
+
+}
+
+
+/* ================= SUPPRIMER ================= */
+
+function removeItem(index){
+
+    cart.splice(index,1);
+
+    updateCart();
+
+}
+
+
+/* ================= OUVRIR PANIER ================= */
+
+function openCart(){
+
+    document
+    .getElementById("cart-panel")
+    .classList.add("active");
+
+}
+
+
+/* ================= FERMER PANIER ================= */
+
+function closeCart(){
+
+    document
+    .getElementById("cart-panel")
+    .classList.remove("active");
+
+}
+
+
+updateCart();
+
+</script>
+
+
+</body>
+</html>
